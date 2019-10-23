@@ -17,9 +17,7 @@ class CrimeViewMmodel: ObservableObject, CrimeViewMmodelProtocol {
     @Published var isAlertPresented: Bool = false
     @Published var messageError = ""
     
-    internal let anySubject = PassthroughSubject<Void, Never>()
     internal let responseObject = PassthroughSubject<Crimes, Never>()
-    internal let responseError = PassthroughSubject<Error, Never>()
     
     internal let mainViewService: MainViewManagerProtocol
     internal var loadingState: LoadingStateProtocol
@@ -45,10 +43,9 @@ class CrimeViewMmodel: ObservableObject, CrimeViewMmodelProtocol {
                 case .finished:()
 //                    print("Success")
                 }
-                }, receiveValue: { response in
+            }, receiveValue: { response in
                     self.crimes = response
 //                    print(self.crimes.nhits)
-                    
             })
         
         cancellables += [

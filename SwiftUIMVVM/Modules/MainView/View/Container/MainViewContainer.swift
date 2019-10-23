@@ -21,7 +21,8 @@ struct MainViewContainer: View {
                 self.viewModel.fetchCrimes()
             }) {
                 Text("Fetch info")
-            }.modifier(ButtonTemplate(background: .blue))
+            }
+            .modifier(ButtonTemplate(background: .blue))
         }
         .navigationBarTitle("Crimes population")
         

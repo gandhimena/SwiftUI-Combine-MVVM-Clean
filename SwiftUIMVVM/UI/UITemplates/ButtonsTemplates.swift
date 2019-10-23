@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct ButtonTemplate: ViewModifier {
     
     @State var background: Color = .red
