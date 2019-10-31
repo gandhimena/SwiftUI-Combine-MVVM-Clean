@@ -35,6 +35,7 @@ struct ScrolViewCast: View {
                     }.foregroundColor(Color.yellow)
                 }
             }
+            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(movieDetailViewModel.cast) { cast in
@@ -42,6 +43,8 @@ struct ScrolViewCast: View {
                     }
                 }
             }.padding(.bottom, 80)
+            
+            
             
             
         }

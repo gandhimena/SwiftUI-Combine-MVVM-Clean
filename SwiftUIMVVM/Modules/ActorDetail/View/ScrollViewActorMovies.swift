@@ -29,8 +29,12 @@ struct ScrollViewActorMovies: View {
                 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(actorDetailViewModel.castData.known_for) { castMovie in
-                        ActorMovieItem(cast: castMovie)
+                    if self.actorDetailViewModel.castData.known_for.isEmpty {
+                        Text("this actor has no movies")
+                    } else {
+                        ForEach(actorDetailViewModel.castData.known_for) { castMovie in
+                            ActorMovieItem(cast: castMovie)
+                        }
                     }
                 }
             }.padding(.bottom, 20)

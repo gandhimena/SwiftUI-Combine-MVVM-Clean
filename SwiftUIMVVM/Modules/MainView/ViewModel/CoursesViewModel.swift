@@ -23,7 +23,7 @@ class PopularMovieViewMmodel: ObservableObject, CrimeViewMmodelProtocol {
     @Published var dataIsValid = false
     @Published var data: Data = Data()
     
-    let cache: Cache = Cache<CacheIdenfiers,[Movie]>()
+    private static let cache = Cache<String, Movie>()
     
     internal let mainViewService: MainViewManagerProtocol
     internal var loadingState: LoadingStateProtocol
@@ -40,6 +40,7 @@ class PopularMovieViewMmodel: ObservableObject, CrimeViewMmodelProtocol {
     
     func getMovies(ratingType: MediaRatingType) {
         loadingState.isLoading = true
+        
         self.page += 1
         let media = Media(mediaType: .movie, mediaRatingType: ratingType, page: self.page)
         

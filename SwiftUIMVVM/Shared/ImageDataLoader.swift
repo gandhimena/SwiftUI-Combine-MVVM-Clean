@@ -17,9 +17,7 @@ protocol ImageDataLoaderProtocol {
 
 final class ImageDataLoader: ObservableObject, ImageDataLoaderProtocol {
     
-    private static let imageCache = NSCache<AnyObject, AnyObject>()
     private static let cache = Cache<String, UIImage>()
-    
     
     private var cancellables: [AnyCancellable] = []
     internal var requestService: RequestServiceProtocol = RequestService()
@@ -33,6 +31,8 @@ final class ImageDataLoader: ObservableObject, ImageDataLoaderProtocol {
     }
     
     func getImage(imageSize: ImageMovieWidthSize) {
+        
+        self.image = UIImage(named: "movieImageDefault")!
         
         if let imageFromCache = ImageDataLoader.cache.value(forKey: self.imageURL) {
             self.image = imageFromCache
