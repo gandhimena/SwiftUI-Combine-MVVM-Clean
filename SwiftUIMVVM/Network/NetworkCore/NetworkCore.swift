@@ -16,11 +16,12 @@ enum HTTPMethod: String {
 }
 
 protocol RequestProtocol {
+    var baseURL: ServiceEnviroment { get }
     var endpoint: String { get }
     var httpMethod: HTTPMethod { get }
     var parameters: [String: Any] { get }
     var headers: [String: String] { get }
-    
+    var queryItems: [URLQueryItem] { get }
 }
 
 public struct ServiceEnviroment {
@@ -37,7 +38,7 @@ public struct ServiceEnviroment {
         self.path = path
     }
     
-    func baseURL(endpont: String) -> String {
+    func pathURL(endpont: String) -> String {
         return "\(protocols)\(port)\(hosts)\(path)\(endpont)"
     }
 }

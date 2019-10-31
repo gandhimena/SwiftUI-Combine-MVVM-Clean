@@ -12,8 +12,9 @@ import Combine
 protocol RequestServiceProtocol {
     var enviroment: Enviroment { get }
     
+    func fetchImage(request: RequestProtocol) -> AnyPublisher<Data, Error>
     func fetchData<T: Decodable>(request: RequestProtocol) -> AnyPublisher<T, Error>
-    func getURLRequest(urlString: String) -> URLRequest?
+    func getURLRequest(urlString: String, _ request: RequestProtocol) -> URLRequest?
     func configRequestMethods(request: RequestProtocol, urlRequest: inout URLRequest)
     func urlSessionRequest<T: Decodable>(urlRequest: URLRequest) -> AnyPublisher<T, Error>
 }
@@ -21,20 +22,29 @@ protocol RequestServiceProtocol {
 struct RequestService: RequestServiceProtocol {
     internal let enviroment: Enviroment
     
-    init(enviroment: Enviroment = Enviroment.prod ) {
+    init(enviroment: Enviroment = Enviroment.dev ) {
         self.enviroment = enviroment
+    }
+    
+    func fetchImage(request: RequestProtocol) -> AnyPublisher<Data, Error> {
+        let urlString = request.baseURL.pathURL(endpont: request.endpoint)
+        guard var urlRequest = getURLRequest(urlString: urlString, request) else { preconditionFailure("can't create url") }
+        configRequestMethods(request: request, urlRequest: &urlRequest)
+        return urlSessionRequestImage(urlRequest: urlRequest)
     }
     
     func fetchData<T: Decodable>(request: RequestProtocol) -> AnyPublisher<T, Error> {
         let urlString =  enviroment.baseURL(endpoint: request.endpoint)
-        guard var urlRequest = getURLRequest(urlString: urlString) else { preconditionFailure("can't create url")}
+//        print(urlString)
+        guard var urlRequest = getURLRequest(urlString: urlString, request) else { preconditionFailure("can't create url") }
         configRequestMethods(request: request, urlRequest: &urlRequest)
         return urlSessionRequest(urlRequest: urlRequest)
     }
     
-    internal func getURLRequest(urlString: String) -> URLRequest? {
-        guard let url = URL(string: urlString) else { return nil }
-        return URLRequest(url: url)
+    internal func getURLRequest(urlString: String, _ request: RequestProtocol) -> URLRequest? {
+        guard let url = URL(string: urlString), var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return nil }
+        urlComponent.queryItems = request.queryItems
+        return URLRequest(url: urlComponent.url!)
     }
     
     internal func configRequestMethods(request: RequestProtocol, urlRequest: inout URLRequest) {
@@ -59,6 +69,15 @@ struct RequestService: RequestServiceProtocol {
         .receive(on: RunLoop.main)
         .eraseToAnyPublisher()
     }
+    
+    internal func urlSessionRequestImage(urlRequest: URLRequest) -> AnyPublisher<Data, Error> {
+            return URLSession.shared.dataTaskPublisher(for: urlRequest)
+//            .print()
+            .map { $0.data }
+            .mapError(ServiceError.responseError)
+//            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+        }
 
 }
 

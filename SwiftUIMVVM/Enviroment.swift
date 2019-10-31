@@ -18,13 +18,13 @@ extension Enviroment {
     var env: ServiceEnviroment {
         switch self {
         case .dev:
-            return ServiceEnviroment(protocols: "https://", hosts: "api.letsbuildthatapp.com/static")
+            return ServiceEnviroment(protocols: "https://", hosts: "api.themoviedb.org", path: "/3")
         case .prod:
-            return ServiceEnviroment(protocols: "https://", hosts: "datos.cdmx.gob.mx/", path: "api/records/1.0/search/?dataset=carpetas-de-investigacion-pgj-de-la-ciudad-de-mexico&rows=1&refine.ao_hechos=2019&refine.delito=ABUSO+SEXUAL")
+            return ServiceEnviroment(protocols: "https://", hosts: "api.themoviedb.org", path: "/3")
         }
     }
     
     func baseURL(endpoint: String) -> String {
-        return self.env.baseURL(endpont: endpoint)
+        return self.env.pathURL(endpont: endpoint)
     }
 }

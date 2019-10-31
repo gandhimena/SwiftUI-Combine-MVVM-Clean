@@ -1,30 +1,27 @@
 //
-//  MainViewContainer.swift
+//  ScrollViewTemplate.swift
 //  SwiftUIMVVM
 //
-//  Created by GandhiMena on 22/10/19.
+//  Created by GandhiMena on 24/10/19.
 //  Copyright © 2019 gandhi. All rights reserved.
 //
 
 import Foundation
 import SwiftUI
 
-struct MainViewContainer: View {
+struct ScrollViewTemplate: View {
     
-    @ObservedObject var viewModel: CrimeViewMmodel
+    @Binding var number: Int
     
     var body: some View {
         ScrollView() {
-            SquareView(number: $viewModel.crimes.nhits)
-            Spacer()
             Button(action: {
-                self.viewModel.fetchCrimes()
+//                self.viewModel.fetMovies()
             }) {
                 Text("Fetch info")
             }
             .modifier(ButtonTemplate(background: .blue))
         }
-        .navigationBarTitle("Crimes population")
-        
+        .navigationBarTitle("Video Popular")
     }
 }

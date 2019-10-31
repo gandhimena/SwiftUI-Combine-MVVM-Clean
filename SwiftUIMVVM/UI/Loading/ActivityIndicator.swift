@@ -24,7 +24,6 @@ struct ActivityIndicator: UIViewRepresentable {
     }
     
     static func dismantleUIView(_ uiView: UIActivityIndicatorView, coordinator: ()) {
-        
     }
 }
 
