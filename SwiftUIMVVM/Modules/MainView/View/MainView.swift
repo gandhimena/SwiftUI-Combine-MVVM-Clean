@@ -34,7 +34,8 @@ struct MainView: View, ContentViewProtocol {
                 }
                 .alert(isPresented: self.$movieViewModel.isAlertPresented) {
                     Alert(title: Text("Error"), message: Text(self.movieViewModel.messageError), dismissButton: .default(Text("Ok")))
-                }.navigationBarTitle(self.mediaType.rawValue.replacingOccurrences(of: "_", with: " "))
+                }
+                .navigationBarTitle(self.mediaType.rawValue.replacingOccurrences(of: "_", with: " "))
 //                .navigationBarItems(leading:
 //                    NavBarItemIcon(action: {}, image: .line_horizontal_3)
 //                )

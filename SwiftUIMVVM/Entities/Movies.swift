@@ -15,11 +15,11 @@ struct Movies: Decodable {
     var results: [Movie]
     
     
-    init(page: Int = 0, total_results: Int = 0, total_pages: Int = 0, result: [Movie] = []) {
+    init(page: Int = 0, total_results: Int = 0, total_pages: Int = 0, results: [Movie] = []) {
      
         self.page = page
         self.total_results = total_results
         self.total_pages = total_pages
-        self.results = result
+        self.results = results
     }
 }

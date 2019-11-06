@@ -23,16 +23,16 @@ struct MovieDetailsView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            MovieDetailImageBackground(urlString: movie.poster_path)
+            MovieDetailImageBackground(urlString: movie.poster_path ?? "")
                 .animation(animation)
             ScrollView {
                 ZStack(alignment: .top) {
                     MovieDetailMainContent(movie: movie)
                         .padding(.top, 300)
-                        .animation(animation)
-                    MovieDetailImageView(urlString: movie.poster_path)
+//                        .animation(animation)
+                    MovieDetailImageView(urlString: movie.poster_path ?? "")
                         .padding(.top, 80)
-                        .animation(animation)
+//                        .animation(animation)
                 }
             }
         }

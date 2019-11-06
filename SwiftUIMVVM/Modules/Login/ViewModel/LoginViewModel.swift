@@ -31,6 +31,7 @@ class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     }
     
     func login() {
+        
         let credential = Credential(username: username, password: password)
         let responsePublisher = manager?.login(credential, self.requestToken)
             .sink(receiveCompletion: { completion in

@@ -16,6 +16,11 @@ struct EnterToAppView: View {
     
     var body: some View {
         
+//        NavigationLink(destination: TabbarView()) {
+//            Text("Enter")
+//            .modifier(ButtonTemplate())
+//        }
+        
         Button(action: {
             self.isActive = true
         }) {

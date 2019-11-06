@@ -15,7 +15,7 @@ struct MovieDetailCoverImage: View {
 
     var body: some View {
         VStack {
-            MovieDetailImageView(urlString: movie.poster_path)
+            MovieDetailImageView(urlString: movie.poster_path ?? "")
             Text(movie.title)
                 .font(.system(size: 28, weight: .bold, design: .default))
                 .foregroundColor(Color.black)

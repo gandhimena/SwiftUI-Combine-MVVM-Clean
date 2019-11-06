@@ -49,7 +49,7 @@ final class ImageDataLoader: ObservableObject, ImageDataLoaderProtocol {
                 }
             }) { data in
                 DispatchQueue.main.async {
-                    guard let image = UIImage(data: data) ?? UIImage(named: "userDefualt") else { return }
+                    guard let image = UIImage(data: data) ?? UIImage(named: "movieImageDefault") else { return }
                     ImageDataLoader.cache.insert(image, forKey: self.imageURL)
                     self.image = image
                 }
