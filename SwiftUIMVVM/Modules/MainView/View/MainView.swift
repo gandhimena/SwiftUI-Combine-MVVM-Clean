@@ -8,11 +8,15 @@
 
 import SwiftUI
 
+
+
 struct MainView: View, ContentViewProtocol {
     
     @ObservedObject var movieViewModel: PopularMovieViewMmodel
     
     var mediaType: MediaRatingType
+    
+    @State var isPresent: Bool = true
     
     init(mediaType: MediaRatingType = .popular) {
         self.mediaType = mediaType
@@ -28,17 +32,15 @@ struct MainView: View, ContentViewProtocol {
                         self.movieViewModel.listItemAppears(movie)
                     }
                 }
-//                .navigationBarItems(
-//                    leading: NavBarItemText(action: self.movieViewModel.getMovies, text: "Fetch Info"),
-//                    trailing: NavBarItemIcon(action: self.movieViewModel.getMovies, image: .house)
-//                )
                 .alert(isPresented: self.$movieViewModel.isAlertPresented) {
                     Alert(title: Text("Error"), message: Text(self.movieViewModel.messageError), dismissButton: .default(Text("Ok")))
-                }.navigationBarTitle(self.mediaType.rawValue)
+                }.navigationBarTitle(self.mediaType.rawValue.replacingOccurrences(of: "_", with: " "))
+//                .navigationBarItems(leading:
+//                    NavBarItemIcon(action: {}, image: .line_horizontal_3)
+//                )
             }
         }
     }
-    
 }
 
 //struct ContentView_Previews: PreviewProvider {

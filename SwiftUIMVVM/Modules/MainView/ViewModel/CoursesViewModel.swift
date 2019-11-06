@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class PopularMovieViewMmodel: ObservableObject, CrimeViewMmodelProtocol {
+class PopularMovieViewMmodel: ObservableObject, MainViewMmodelProtocol {
     
     private var cancellables: [AnyCancellable] = []
     @Published private(set) var state: ViewState = .idle

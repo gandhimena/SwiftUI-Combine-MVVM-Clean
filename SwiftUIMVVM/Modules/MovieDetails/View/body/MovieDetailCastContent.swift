@@ -40,3 +40,5 @@ struct MovieDetailCastContent: View {
         }
     }
 }
+
+

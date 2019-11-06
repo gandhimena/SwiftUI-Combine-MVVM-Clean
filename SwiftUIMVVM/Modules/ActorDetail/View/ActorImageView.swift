@@ -45,6 +45,5 @@ struct ActorImageView: View {
             ).animation(animation)
                 
         }
-        
     }
 }

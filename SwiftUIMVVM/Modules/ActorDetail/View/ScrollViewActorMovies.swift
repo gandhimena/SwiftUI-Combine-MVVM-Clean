@@ -31,6 +31,7 @@ struct ScrollViewActorMovies: View {
                 HStack {
                     if self.actorDetailViewModel.castData.known_for.isEmpty {
                         Text("this actor has no movies")
+                            .foregroundColor(Color.white)
                     } else {
                         ForEach(actorDetailViewModel.castData.known_for) { castMovie in
                             ActorMovieItem(cast: castMovie)

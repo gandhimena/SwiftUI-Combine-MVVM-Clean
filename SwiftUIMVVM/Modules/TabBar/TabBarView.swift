@@ -15,18 +15,20 @@ struct TabbarView: View {
         case home, likes, love, notif, profile
     }
     
-    private func tabbedItem(_ text: String, _ image: SF) -> some View {
-        return VStack {
-            Image(systemName: image.name).imageScale(.medium)
-            Text(text)
-        }
-    }
-    
     var body: some View {
         TabView {
             MainView(mediaType: .top_rated).tabItem { tabbedItem("top Rate", .star) }.tag(Tabs.likes)
             MainView(mediaType: .popular).tabItem { tabbedItem("Popular", .flame) }.tag(Tabs.home)
             MainView(mediaType: .upcoming).tabItem { tabbedItem("upcoming", .calendar) }.tag(Tabs.love)
+        }
+    }
+}
+
+extension TabbarView {
+    private func tabbedItem(_ text: String, _ image: SF) -> some View {
+        return VStack {
+            Image(systemName: image.name).imageScale(.medium)
+            Text(text)
         }
     }
 }

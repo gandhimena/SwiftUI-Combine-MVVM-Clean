@@ -35,7 +35,6 @@ struct RequestService: RequestServiceProtocol {
     
     func fetchData<T: Decodable>(request: RequestProtocol) -> AnyPublisher<T, Error> {
         let urlString =  enviroment.baseURL(endpoint: request.endpoint)
-//        print(urlString)
         guard var urlRequest = getURLRequest(urlString: urlString, request) else { preconditionFailure("can't create url") }
         configRequestMethods(request: request, urlRequest: &urlRequest)
         return urlSessionRequest(urlRequest: urlRequest)
@@ -61,7 +60,7 @@ struct RequestService: RequestServiceProtocol {
     
     internal func urlSessionRequest<T: Decodable>(urlRequest: URLRequest) -> AnyPublisher<T, Error> {
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
-//        .print()
+        .print()
         .map { $0.data }
         .mapError(ServiceError.responseError)
         .decode(type: T.self, decoder: JSONDecoder())

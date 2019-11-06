@@ -11,6 +11,7 @@ import Combine
 
 protocol ContentViewProtocol {
     var movieViewModel: PopularMovieViewMmodel { get }
+    var mediaType: MediaRatingType { get }
 }
 
 protocol MainViewManagerProtocol {
@@ -21,7 +22,7 @@ protocol MainViewManagerProtocol {
     func getCastDetail(_ mediaCastDetail: MediaCastDetail) -> AnyPublisher<CastDetail, Error>
 }
 
-protocol CrimeViewMmodelProtocol {
+protocol MainViewMmodelProtocol {
     var mainViewService: MainViewManagerProtocol { get }
     func getMoreMovies(media: Media)
     func getMovies(ratingType: MediaRatingType)

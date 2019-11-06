@@ -10,14 +10,18 @@ import SwiftUI
 
 struct ButtonTemplate: ViewModifier {
     
-    @State var background: Color = .red
+    @State var background: Color = .blue
+    @State var color: Color = .white
+    @State var textSize: CGFloat = 16
+    @State var textWeight: Font.Weight = .regular
     
     func body(content: Content) -> some View {
         return content
-        .frame(width: 200, height: 46, alignment: .center)
-        .background(background)
-        .foregroundColor(.white)
-        .cornerRadius(10)
+        .padding()
+        .frame(minWidth: 0, maxWidth: .infinity)
+        .background(Capsule().fill(background))
+        .foregroundColor(Color.white)
+            .font(.system(size: textSize, weight: textWeight, design: .default))
     }
 }
 

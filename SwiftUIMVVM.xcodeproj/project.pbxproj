@@ -38,6 +38,19 @@
 		98357451235E3F7B009BD51E /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98357450235E3F7B009BD51E /* MainViewManager.swift */; };
 		98357453235E4541009BD51E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98357452235E4541009BD51E /* Enviroment.swift */; };
 		98357456235E882F009BD51E /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98357455235E882F009BD51E /* ServiceError.swift */; };
+		98692BAF236E45FA004306ED /* LoginViewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BAE236E45FA004306ED /* LoginViewRequest.swift */; };
+		98692BB2236E4D18004306ED /* RequestToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BB1236E4D18004306ED /* RequestToken.swift */; };
+		98692BB4236E5121004306ED /* RequestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BB3236E5121004306ED /* RequestSession.swift */; };
+		98692BB62370E9B8004306ED /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BB52370E9B8004306ED /* Credential.swift */; };
+		98692BB82371E6F6004306ED /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BB72371E6F6004306ED /* UIApplication+Extension.swift */; };
+		98692BBB237223F0004306ED /* LoginImageBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BBA237223F0004306ED /* LoginImageBackground.swift */; };
+		98692BBD23722473004306ED /* LoginTextFieldSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BBC23722473004306ED /* LoginTextFieldSection.swift */; };
+		98692BC1237225E4004306ED /* RectangleTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BC0237225E4004306ED /* RectangleTemplate.swift */; };
+		98692BC323722A84004306ED /* LoginSingUpSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BC223722A84004306ED /* LoginSingUpSection.swift */; };
+		98692BC523723001004306ED /* EnterToAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BC423723001004306ED /* EnterToAppView.swift */; };
+		98692BC72372326D004306ED /* LoginTextFieldsAndSignUpSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BC62372326D004306ED /* LoginTextFieldsAndSignUpSection.swift */; };
+		98692BC923724925004306ED /* TextFieldTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BC823724925004306ED /* TextFieldTemplate.swift */; };
+		98692BCB23724ACD004306ED /* SecureFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BCA23724ACD004306ED /* SecureFieldCustom.swift */; };
 		988CF6F6236A001D00DCBAA2 /* ScrollViewActorMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CF6F5236A001D00DCBAA2 /* ScrollViewActorMovies.swift */; };
 		988CF6F8236A0BB100DCBAA2 /* ActorMovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CF6F7236A0BB100DCBAA2 /* ActorMovieItem.swift */; };
 		988CF6FA236A0E0E00DCBAA2 /* ActorMovieItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CF6F9236A0E0E00DCBAA2 /* ActorMovieItemImage.swift */; };
@@ -63,6 +76,11 @@
 		98B669FA236942AA00AF5237 /* CastDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B669F9236942AA00AF5237 /* CastDetail.swift */; };
 		98B669FC2369431300AF5237 /* CastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B669FB2369431300AF5237 /* CastData.swift */; };
 		98B669FE2369449700AF5237 /* CastMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B669FD2369449700AF5237 /* CastMovies.swift */; };
+		98D48DB5236BC7BA0064FF4F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D48DB4236BC7BA0064FF4F /* LoginView.swift */; };
+		98D48DB7236BC8140064FF4F /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D48DB6236BC8140064FF4F /* View+Extension.swift */; };
+		98D48DB9236BCE5A0064FF4F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D48DB8236BCE5A0064FF4F /* LoginViewModel.swift */; };
+		98D48DBE236BCF240064FF4F /* LoginRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D48DBD236BCF240064FF4F /* LoginRemoteDataManager.swift */; };
+		98D48DC1236BD0960064FF4F /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D48DC0236BD0960064FF4F /* AuthToken.swift */; };
 		98E4F4AF23600F5A00EF56CD /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F4AE23600F5A00EF56CD /* TabBarView.swift */; };
 		98E4F4B32360207100EF56CD /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F4B22360207100EF56CD /* Color+Extension.swift */; };
 		98E4F4B6236161E100EF56CD /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4F4B5236161E100EF56CD /* Media.swift */; };
@@ -107,6 +125,19 @@
 		98357450235E3F7B009BD51E /* MainViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
 		98357452235E4541009BD51E /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		98357455235E882F009BD51E /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		98692BAE236E45FA004306ED /* LoginViewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewRequest.swift; sourceTree = "<group>"; };
+		98692BB1236E4D18004306ED /* RequestToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestToken.swift; sourceTree = "<group>"; };
+		98692BB3236E5121004306ED /* RequestSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSession.swift; sourceTree = "<group>"; };
+		98692BB52370E9B8004306ED /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		98692BB72371E6F6004306ED /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		98692BBA237223F0004306ED /* LoginImageBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginImageBackground.swift; sourceTree = "<group>"; };
+		98692BBC23722473004306ED /* LoginTextFieldSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldSection.swift; sourceTree = "<group>"; };
+		98692BC0237225E4004306ED /* RectangleTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleTemplate.swift; sourceTree = "<group>"; };
+		98692BC223722A84004306ED /* LoginSingUpSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSingUpSection.swift; sourceTree = "<group>"; };
+		98692BC423723001004306ED /* EnterToAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterToAppView.swift; sourceTree = "<group>"; };
+		98692BC62372326D004306ED /* LoginTextFieldsAndSignUpSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldsAndSignUpSection.swift; sourceTree = "<group>"; };
+		98692BC823724925004306ED /* TextFieldTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTemplate.swift; sourceTree = "<group>"; };
+		98692BCA23724ACD004306ED /* SecureFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFieldCustom.swift; sourceTree = "<group>"; };
 		988CF6F5236A001D00DCBAA2 /* ScrollViewActorMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewActorMovies.swift; sourceTree = "<group>"; };
 		988CF6F7236A0BB100DCBAA2 /* ActorMovieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorMovieItem.swift; sourceTree = "<group>"; };
 		988CF6F9236A0E0E00DCBAA2 /* ActorMovieItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorMovieItemImage.swift; sourceTree = "<group>"; };
@@ -132,6 +163,11 @@
 		98B669F9236942AA00AF5237 /* CastDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetail.swift; sourceTree = "<group>"; };
 		98B669FB2369431300AF5237 /* CastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastData.swift; sourceTree = "<group>"; };
 		98B669FD2369449700AF5237 /* CastMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastMovies.swift; sourceTree = "<group>"; };
+		98D48DB4236BC7BA0064FF4F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		98D48DB6236BC8140064FF4F /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		98D48DB8236BCE5A0064FF4F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		98D48DBD236BCF240064FF4F /* LoginRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemoteDataManager.swift; sourceTree = "<group>"; };
+		98D48DC0236BD0960064FF4F /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		98E4F4AE23600F5A00EF56CD /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		98E4F4B22360207100EF56CD /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		98E4F4B5236161E100EF56CD /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -204,6 +240,8 @@
 				982215242367560E00DE6672 /* MovieDetails */,
 				98357454235E87FD009BD51E /* MainView */,
 				98E4F4AD23600DFA00EF56CD /* TabBar */,
+				98D48DB3236BC73F0064FF4F /* Login */,
+				98D48DB2236BC7330064FF4F /* Start */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -257,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				9835744E235E3E0C009BD51E /* MainViewEndpoint.swift */,
+				98692BAE236E45FA004306ED /* LoginViewRequest.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -307,6 +346,28 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		98692BB0236E4D01004306ED /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				98692BB1236E4D18004306ED /* RequestToken.swift */,
+				98692BB3236E5121004306ED /* RequestSession.swift */,
+				98692BB52370E9B8004306ED /* Credential.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		98692BB92371FBCA004306ED /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				98692BBA237223F0004306ED /* LoginImageBackground.swift */,
+				98692BC62372326D004306ED /* LoginTextFieldsAndSignUpSection.swift */,
+				98692BBC23722473004306ED /* LoginTextFieldSection.swift */,
+				98692BC223722A84004306ED /* LoginSingUpSection.swift */,
+				98692BC423723001004306ED /* EnterToAppView.swift */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
 		988CF6FB236A145700DCBAA2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +400,9 @@
 				988D5E8D235FF1BD000F9BF0 /* NavigationBarItems.swift */,
 				9806012B2362C98200C1F6E8 /* ScrollViewTemplate.swift */,
 				98FB28B32367F023001723D6 /* TextTemplate.swift */,
+				98692BC0237225E4004306ED /* RectangleTemplate.swift */,
+				98692BC823724925004306ED /* TextFieldTemplate.swift */,
+				98692BCA23724ACD004306ED /* SecureFieldCustom.swift */,
 			);
 			path = UITemplates;
 			sourceTree = "<group>";
@@ -378,6 +442,8 @@
 				988D5E89235FE448000F9BF0 /* Button+Extension.swift */,
 				98E4F4B22360207100EF56CD /* Color+Extension.swift */,
 				98221520236752A600DE6672 /* String+Extension.swift */,
+				98D48DB6236BC8140064FF4F /* View+Extension.swift */,
+				98692BB72371E6F6004306ED /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,6 +508,57 @@
 			path = ActorDetail;
 			sourceTree = "<group>";
 		};
+		98D48DB2236BC7330064FF4F /* Start */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		98D48DB3236BC73F0064FF4F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				98692BB0236E4D01004306ED /* Entities */,
+				98D48DBC236BCF0C0064FF4F /* DataManager */,
+				98D48DBB236BCE690064FF4F /* ViewModel */,
+				98D48DBA236BCE640064FF4F /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		98D48DBA236BCE640064FF4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98D48DB4236BC7BA0064FF4F /* LoginView.swift */,
+				98692BB92371FBCA004306ED /* Body */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98D48DBB236BCE690064FF4F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				98D48DB8236BCE5A0064FF4F /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		98D48DBC236BCF0C0064FF4F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				98D48DBF236BCF280064FF4F /* Remote */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		98D48DBF236BCF280064FF4F /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				98D48DBD236BCF240064FF4F /* LoginRemoteDataManager.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		98E4F4AD23600DFA00EF56CD /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +578,7 @@
 				98B669F9236942AA00AF5237 /* CastDetail.swift */,
 				98B669FB2369431300AF5237 /* CastData.swift */,
 				98B669FD2369449700AF5237 /* CastMovies.swift */,
+				98D48DC0236BD0960064FF4F /* AuthToken.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -542,8 +660,10 @@
 				988D5E80235F682E000F9BF0 /* Constants.swift in Sources */,
 				982A16DC2368C86C00F1830E /* MovieCast.swift in Sources */,
 				981A7597235C18B000DDB4C6 /* AppDelegate.swift in Sources */,
+				98D48DBE236BCF240064FF4F /* LoginRemoteDataManager.swift in Sources */,
 				988CF6FA236A0E0E00DCBAA2 /* ActorMovieItemImage.swift in Sources */,
 				988FD7A823696E2800F2D826 /* ActorDetailViewModel.swift in Sources */,
+				98692BCB23724ACD004306ED /* SecureFieldCustom.swift in Sources */,
 				9806012C2362C98200C1F6E8 /* ScrollViewTemplate.swift in Sources */,
 				98357449235E277C009BD51E /* NetworkCore.swift in Sources */,
 				988D5E77235EAB40000F9BF0 /* MainViewProtocols.swift in Sources */,
@@ -551,13 +671,19 @@
 				9822151D2366115A00DE6672 /* ImageDataLoader.swift in Sources */,
 				98E4F4B6236161E100EF56CD /* Media.swift in Sources */,
 				981A75AF235C1E1800DDB4C6 /* CoursesViewModel.swift in Sources */,
+				98692BC523723001004306ED /* EnterToAppView.swift in Sources */,
 				982A16DE2368C9B600F1830E /* MovieDetailDescription.swift in Sources */,
 				9835744B235E2EAC009BD51E /* RequestService.swift in Sources */,
+				98692BC923724925004306ED /* TextFieldTemplate.swift in Sources */,
 				98357453235E4541009BD51E /* Enviroment.swift in Sources */,
 				98B669F8236941D400AF5237 /* MediaCastDetail.swift in Sources */,
 				98357451235E3F7B009BD51E /* MainViewManager.swift in Sources */,
 				98FB28B62368BDF6001723D6 /* ScrollViewCast.swift in Sources */,
+				98692BB62370E9B8004306ED /* Credential.swift in Sources */,
 				982A16E82368FAD700F1830E /* MediaCast.swift in Sources */,
+				98D48DB5236BC7BA0064FF4F /* LoginView.swift in Sources */,
+				98692BBB237223F0004306ED /* LoginImageBackground.swift in Sources */,
+				98692BB4236E5121004306ED /* RequestSession.swift in Sources */,
 				988D5E85235FDAE9000F9BF0 /* ButtonsTemplates.swift in Sources */,
 				989D022C2367E6CC0017B9DC /* GenRes.swift in Sources */,
 				98B669FC2369431300AF5237 /* CastData.swift in Sources */,
@@ -574,19 +700,25 @@
 				98B669F52369193100AF5237 /* MoviewDetailCastImage.swift in Sources */,
 				982A16E62368F5FF00F1830E /* Cast.swift in Sources */,
 				988CF6FF236A270000DCBAA2 /* MovieDetailCoverImage.swift in Sources */,
+				98692BC323722A84004306ED /* LoginSingUpSection.swift in Sources */,
 				988D5E8E235FF1BD000F9BF0 /* NavigationBarItems.swift in Sources */,
 				988FD7A423696CC600F2D826 /* ActorDetailView.swift in Sources */,
 				98E4F4AF23600F5A00EF56CD /* TabBarView.swift in Sources */,
 				988CF6F6236A001D00DCBAA2 /* ScrollViewActorMovies.swift in Sources */,
 				981A7599235C18B000DDB4C6 /* SceneDelegate.swift in Sources */,
 				988D5E8C235FEDAC000F9BF0 /* SF.swift in Sources */,
+				98692BBD23722473004306ED /* LoginTextFieldSection.swift in Sources */,
+				98692BC72372326D004306ED /* LoginTextFieldsAndSignUpSection.swift in Sources */,
 				98B669F3236918E700AF5237 /* MainViewImageItem.swift in Sources */,
 				988D5E7D235ED82E000F9BF0 /* ActivityIndicator.swift in Sources */,
+				98692BAF236E45FA004306ED /* LoginViewRequest.swift in Sources */,
 				982A16E22368CCD200F1830E /* MovieDetailCastContent.swift in Sources */,
 				981A759B235C18B000DDB4C6 /* MainView.swift in Sources */,
 				98B669FA236942AA00AF5237 /* CastDetail.swift in Sources */,
 				988D5E8A235FE448000F9BF0 /* Button+Extension.swift in Sources */,
 				982A16E02368CB0D00F1830E /* MovieDetailMainContent.swift in Sources */,
+				98D48DB9236BCE5A0064FF4F /* LoginViewModel.swift in Sources */,
+				98692BC1237225E4004306ED /* RectangleTemplate.swift in Sources */,
 				98221521236752A600DE6672 /* String+Extension.swift in Sources */,
 				982A16D82368C63700F1830E /* MovieDetailViewOverview.swift in Sources */,
 				982A16E42368F18D00F1830E /* MovieDetailViewModel.swift in Sources */,
@@ -595,8 +727,12 @@
 				988CF6F8236A0BB100DCBAA2 /* ActorMovieItem.swift in Sources */,
 				988FD7A2236968D400F2D826 /* ActorImageView.swift in Sources */,
 				98B669FE2369449700AF5237 /* CastMovies.swift in Sources */,
+				98692BB2236E4D18004306ED /* RequestToken.swift in Sources */,
+				98692BB82371E6F6004306ED /* UIApplication+Extension.swift in Sources */,
 				98E4F4B32360207100EF56CD /* Color+Extension.swift in Sources */,
+				98D48DB7236BC8140064FF4F /* View+Extension.swift in Sources */,
 				989D0224236774490017B9DC /* MoviewDetailImageBackground.swift in Sources */,
+				98D48DC1236BD0960064FF4F /* AuthToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
