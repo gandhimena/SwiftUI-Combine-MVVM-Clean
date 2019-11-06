@@ -18,9 +18,10 @@ struct TabbarView: View {
     var body: some View {
         
         TabView {
-            MainView(mediaType: .upcoming).tabItem { tabbedItem("upcoming", .calendar) }.tag(Tabs.upcoming)
+            
             MainView(mediaType: .top_rated).tabItem { tabbedItem("top Rate", .star) }.tag(Tabs.topRate)
             MainView(mediaType: .popular).tabItem { tabbedItem("Popular", .flame) }.tag(Tabs.popular)
+            MainView(mediaType: .upcoming).tabItem { tabbedItem("upcoming", .calendar) }.tag(Tabs.upcoming)
             
         }
         .navigationBarBackButtonHidden(true)
