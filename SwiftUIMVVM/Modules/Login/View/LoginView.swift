@@ -22,6 +22,7 @@ struct LoginView: View {
     }
     
     var body: some View {
+        
         NavigationView {
             ZStack {
                 LoginImageBackground()
@@ -51,7 +52,6 @@ struct LoginView: View {
                 }.onTapGesture {
                     self.endEditing()
                 }
-                
             }.onAppear {
                 self.loginViewModel.createRequestToken()
             }

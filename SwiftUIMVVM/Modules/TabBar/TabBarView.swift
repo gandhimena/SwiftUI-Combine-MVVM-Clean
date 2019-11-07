@@ -12,16 +12,17 @@ import SwiftUI
 struct TabbarView: View {
     
     private enum Tabs: Int {
-        case topRate, popular, upcoming
+        case topRate, popular, upcoming, profile
     }
     
     var body: some View {
         
         TabView {
             
-            MainView(mediaType: .top_rated).tabItem { tabbedItem("top Rate", .star) }.tag(Tabs.topRate)
+            MainView(mediaType: .top_rated).tabItem { tabbedItem("Top Rate", .star) }.tag(Tabs.topRate)
             MainView(mediaType: .popular).tabItem { tabbedItem("Popular", .flame) }.tag(Tabs.popular)
-            MainView(mediaType: .upcoming).tabItem { tabbedItem("upcoming", .calendar) }.tag(Tabs.upcoming)
+            MainView(mediaType: .upcoming).tabItem { tabbedItem("Upcoming", .calendar) }.tag(Tabs.upcoming)
+            ProfileView().tabItem { tabbedItem("Profile", .person_circle) }.tag(Tabs.profile)
             
         }
         .navigationBarBackButtonHidden(true)

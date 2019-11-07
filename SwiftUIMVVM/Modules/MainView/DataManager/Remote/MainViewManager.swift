@@ -21,7 +21,6 @@ struct MainViewManager: MainViewManagerProtocol {
         let result = requestService.fetchData(request: MainViewRequest.getMovies(media)) as AnyPublisher<Movies, Error>
         return result
 //            .print()
-            .map {$0}
             .eraseToAnyPublisher()
     }
     
@@ -29,7 +28,6 @@ struct MainViewManager: MainViewManagerProtocol {
         let result = requestService.fetchImage(request: MainViewRequest.getImage(imageSize, urlString)) as AnyPublisher<Data, Error>
         return result
 //            .print()
-            .map {$0}
             .eraseToAnyPublisher()
     }
     

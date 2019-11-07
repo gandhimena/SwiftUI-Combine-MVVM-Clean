@@ -27,8 +27,6 @@ struct ButtonTemplate: ViewModifier {
 
 struct ButtonImage: ViewModifier {
     
-    @State var image: Image = Image(uiImage: .add)
-    
     func body(content: Content) -> some View {
         return content
         .imageScale(.medium)

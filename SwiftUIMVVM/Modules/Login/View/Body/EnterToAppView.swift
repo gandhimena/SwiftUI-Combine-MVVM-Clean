@@ -11,24 +11,24 @@ import SwiftUI
 
 struct EnterToAppView: View {
     
-    @State var action: () -> Void
-    @State var isActive: Bool
+    @State internal var action: () -> Void
+    @State internal var isActive: Bool
     
     var body: some View {
         
-//        NavigationLink(destination: TabbarView()) {
-//            Text("Enter")
-//            .modifier(ButtonTemplate())
-//        }
-        
-        Button(action: {
-            self.isActive = true
-        }) {
+        NavigationLink(destination: TabbarView()) {
             Text("Enter")
             .modifier(ButtonTemplate())
         }
-        .sheet(isPresented: $isActive) {
-            TabbarView()
-        }
+        
+//        Button(action: {
+//            self.isActive = true
+//        }) {
+//            Text("Enter")
+//            .modifier(ButtonTemplate())
+//        }
+//        .sheet(isPresented: $isActive) {
+//            TabbarView()
+//        }
     }
 }
