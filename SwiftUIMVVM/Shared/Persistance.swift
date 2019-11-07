@@ -8,15 +8,41 @@
 
 import Foundation
 
+import KeychainSwift
+
 enum KeyChainName: String, CaseIterable {
     case keychain_sessionID
+    case keychain_token
+    
+    static let allValues = KeyChainName.allCases
 }
 
 protocol PersistanceProtocol: class {
+    func setKeychain(data: String?, _ forKey: KeyChainName)
+    func getKeychain(key: KeyChainName) -> String?
+    func deleteKeychain(_ key: KeyChainName)
+    func deleteAllKeyChains()
     
 }
 
 class Persistance: PersistanceProtocol {
     
+    let keychain = KeychainSwift()
     
+    func setKeychain(data: String?, _ forKey: KeyChainName) {
+        guard let keyData = data else { return print("keychain not found")}
+        keychain.set(keyData, forKey: forKey.rawValue)
+    }
+    
+    func getKeychain(key: KeyChainName) -> String? {
+        return keychain.get(key.rawValue)
+    }
+    
+    func deleteKeychain(_ key: KeyChainName) {
+        keychain.delete(key.rawValue)
+    }
+    
+    func deleteAllKeyChains() {
+        KeyChainName.allValues.forEach { keychain.delete($0.rawValue) }
+    }
 }
