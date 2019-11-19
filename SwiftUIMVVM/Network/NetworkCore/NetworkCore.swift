@@ -13,6 +13,7 @@ enum HTTPMethod: String {
     case get = "GET"
     case patch = "PATCH"
     case put = "PUT"
+    case delete = "DELETE"
 }
 
 protocol RequestProtocol {

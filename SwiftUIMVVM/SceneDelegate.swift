@@ -9,11 +9,16 @@
 import UIKit
 import SwiftUI
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+protocol SceneDelegateProtocol {
+    var persistance: PersistanceProtocol? { get }
+}
+
+
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, SceneDelegateProtocol {
 
     var window: UIWindow?
     
-    var isSessionID: Bool = true
+    var persistance: PersistanceProtocol? = Persistance()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,14 +26,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let hostLoginController = UIHostingController(rootView: LoginView(loginViewModel: .init()))
-        let hostTabBarController = UIHostingController(rootView: TabbarView())
         
-        let rootController = isSessionID ? hostTabBarController : hostLoginController
+        let hostLoginController = UIHostingController(rootView: StartView(viewModel: .init()))
+//        let hostTabBarController = UIHostingController(rootView: TabbarView())
+        
+//        guard let isSessionID = persistance?.isKeyChainExist(.keychain_sessionID) else {
+//            let hostLoginController = UIHostingController(rootView: LoginView(loginViewModel: .init()))
+//            if let windowScene = scene as? UIWindowScene {
+//                let window = UIWindow(windowScene: windowScene)
+//                window.rootViewController = hostLoginController
+//                self.window = window
+//                window.makeKeyAndVisible()
+//            }
+//            return
+//        }
+        
+//        let rootController = isSessionID ? hostTabBarController : hostLoginController
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = rootController
+            window.rootViewController = hostLoginController
             self.window = window
             window.makeKeyAndVisible()
         }

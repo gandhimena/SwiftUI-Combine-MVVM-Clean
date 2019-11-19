@@ -11,7 +11,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State var isSettingsShow: Bool = false
+    @ObservedObject var viewModel: ProfileViewModel
+    @ObservedObject var starViewModel: StartViewModel
     
     var animation: Animation {
         Animation.spring()
@@ -22,13 +23,21 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                ProfileScrollView()
-                ProfileLateralMenu(toggle: $isSettingsShow, animation: animation)
+                ProfileScrollView(viewModel: viewModel)
+                ProfileLateralMenu(viewModel: viewModel, startViewModel: starViewModel, animation: animation)
             }
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("Profile")
             .navigationBarItems(trailing:
-                NavBarItemIcon(action: { self.isSettingsShow.toggle() }, image: .ellipsis)
+                NavBarItemIcon(action: { self.viewModel.isSettingsShow.toggle() }, image: .ellipsis, color: .gray)
+            )
+        }.alert(isPresented: self.$viewModel.isAlertPresented) {
+            Alert(title: Text("User Auth"),
+              message: Text("You need authorize the app to create list"),
+              primaryButton: Alert.Button.cancel(Text("Cancel")),
+              secondaryButton: Alert.Button.default(Text("Go to Authorize"), action: {
+                self.viewModel.authorizeToken()
+              })
             )
         }
     }

@@ -14,6 +14,7 @@ import SwiftUI
 struct LoginView: View {
     
     @ObservedObject var loginViewModel: LoginViewModel
+    @ObservedObject var startViewModel: StartViewModel
     
     var animation: Animation {
         Animation.spring()
@@ -23,9 +24,10 @@ struct LoginView: View {
     
     var body: some View {
         
-        NavigationView {
+//        NavigationView {
             ZStack {
                 LoginImageBackground()
+                    .opacity(startViewModel.isTabBarActive ? 0.0 : 1.0)
                 ScrollView(.vertical) {
                     ZStack {
                         VStack {
@@ -43,20 +45,24 @@ struct LoginView: View {
                         }
                         .padding(.top, 50)
                         // -------------------------------> SECTION: Enter to app
-                        EnterToAppView(action: loginViewModel.createSession, isActive: loginViewModel.isLoginSuccess)
+//                        EnterToAppView(action: loginViewModel.createSession, isActive: loginViewModel.isLoginSuccess)
+                        EnterToAppView(viewModel: startViewModel)
                         .padding(.top, 100)
                         .opacity(loginViewModel.isLoginSuccess ? 1.0 : 0.0)
                         .padding(.bottom, loginViewModel.isLoginSuccess ? 0.0 : -50 )
                         .animation(animation)
                     }.padding([.leading, .trailing], 30)
+                        
                 }.onTapGesture {
                     self.endEditing()
                 }
-            }.onAppear {
-                self.loginViewModel.createRequestToken()
+                .opacity(startViewModel.isTabBarActive ? 0.0 : 1.0)
             }
-            .edgesIgnoringSafeArea(.all)
-        }
+            .edgesIgnoringSafeArea(loginViewModel.isLoginSuccess ? .init() : .all)
+            .alert(isPresented: self.$loginViewModel.isAlertPresented) {
+                Alert(title: Text("Error"), message: Text(self.loginViewModel.errorMessage), dismissButton: .default(Text("OK")))
+            }
+//        }
     }
 }
 

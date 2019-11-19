@@ -9,15 +9,16 @@
 import Foundation
 
 struct RequestToken: Decodable {
+    var status_code: Int?
+    var status_message: String?
     var success: Bool
-    var expires_at: String
     var request_token: String
     
-    init(success: Bool = false, expires_at: String = "", request_token: String = "") {
+    init(status_code: Int? = nil, status_message: String? = nil, success: Bool = false, request_token: String = "") {
+        self.status_code = status_code
+        self.status_message = status_message
         self.success = success
-        self.expires_at = expires_at
         self.request_token = request_token
     }
-
 }
 

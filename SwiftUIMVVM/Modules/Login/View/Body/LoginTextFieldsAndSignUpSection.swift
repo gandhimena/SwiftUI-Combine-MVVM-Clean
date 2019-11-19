@@ -16,8 +16,9 @@ struct LoginTextfieldsAndSignUpSection: View {
     var body: some View {
         VStack {
             LoginTextFieldSection(username: $loginViewModel.username, password: $loginViewModel.password)
+            //-------------------> Login
             Button(action: {
-                self.loginViewModel.login()
+                self.loginViewModel.createRequestToken()
             })
             {
                Text("LOGIN")

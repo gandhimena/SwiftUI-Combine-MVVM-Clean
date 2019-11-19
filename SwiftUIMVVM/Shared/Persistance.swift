@@ -12,7 +12,8 @@ import KeychainSwift
 
 enum KeyChainName: String, CaseIterable {
     case keychain_sessionID
-    case keychain_token
+    case keychain_access_token
+    case keychain_accountID
     
     static let allValues = KeyChainName.allCases
 }
@@ -22,6 +23,7 @@ protocol PersistanceProtocol: class {
     func getKeychain(key: KeyChainName) -> String?
     func deleteKeychain(_ key: KeyChainName)
     func deleteAllKeyChains()
+    func isKeyChainExist(_ key: KeyChainName) -> Bool
     
 }
 
@@ -44,5 +46,10 @@ class Persistance: PersistanceProtocol {
     
     func deleteAllKeyChains() {
         KeyChainName.allValues.forEach { keychain.delete($0.rawValue) }
+    }
+    
+    func isKeyChainExist(_ key: KeyChainName) -> Bool {
+        guard keychain.get(key.rawValue) != nil else { return false}
+        return true
     }
 }

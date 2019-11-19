@@ -36,8 +36,8 @@ class MovieDetailViewModel: ObservableObject {
                 case .finished:
                     print("download cast finished")
                 }
-            }) { movieCast in
-                self.cast = movieCast.cast
+            }) { [weak self] movieCast in
+                self?.cast = movieCast.cast
         }
         
         cancellables += [

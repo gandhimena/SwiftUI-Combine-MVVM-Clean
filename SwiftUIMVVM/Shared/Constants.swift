@@ -11,7 +11,6 @@ import UIKit
 
 var apiKey = "4b5248f87a44ca6247c8e65be153ffb5"
 var accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YjUyNDhmODdhNDRjYTYyNDdjOGU2NWJlMTUzZmZiNSIsInN1YiI6IjVjMGI0YTE5YzNhMzY4MjUyODA2OWEyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0HuRC5x0mPnz9s2qqaSkwdQ0mLZ-8fxVL1dIjd7-f98"
-
 enum CacheIdentifiers: Hashable {
     case video_image_popular
 }
@@ -25,6 +24,14 @@ enum MediaType: String {
 enum BaseLangue: String {
     case es = "es-ES"
     case en = "en-US"
+    
+    func getPrefix(_ lang: BaseLangue) -> String {
+        return String(lang.rawValue.prefix(2))
+    }
+    
+    func getSufix(_ lang: BaseLangue) -> String {
+        return String(lang.rawValue.suffix(2))
+    }
 }
 
 enum APIServiceError: Error {

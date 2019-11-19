@@ -34,16 +34,23 @@ struct RequestService: RequestServiceProtocol {
     }
     
     func fetchData<T: Decodable>(request: RequestProtocol) -> AnyPublisher<T, Error> {
-        let urlString =  enviroment.baseURL(endpoint: request.endpoint)
+        let urlString = request.baseURL.pathURL(endpont: request.endpoint)
+//        let urlString =  enviroment.baseURL(endpoint: request.endpoint)
         guard var urlRequest = getURLRequest(urlString: urlString, request) else { preconditionFailure("can't create url") }
         configRequestMethods(request: request, urlRequest: &urlRequest)
         return urlSessionRequest(urlRequest: urlRequest)
     }
     
     internal func getURLRequest(urlString: String, _ request: RequestProtocol) -> URLRequest? {
-        guard let url = URL(string: urlString), var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return nil }
-        urlComponent.queryItems = request.queryItems
-        return URLRequest(url: urlComponent.url!)
+        if request.baseURL.path == "/3" {
+            guard let url = URL(string: urlString), var urlComponent = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return nil }
+            urlComponent.queryItems = request.queryItems
+            return URLRequest(url: urlComponent.url!)
+        } else {
+            let url = URL(string: urlString)
+            return URLRequest(url: url!)
+        }
+        
     }
     
     internal func configRequestMethods(request: RequestProtocol, urlRequest: inout URLRequest) {
@@ -51,10 +58,11 @@ struct RequestService: RequestServiceProtocol {
         case .post:
             request.headers.forEach { urlRequest.setValue($0.value, forHTTPHeaderField: $0.key) }
             urlRequest.httpMethod = request.httpMethod.rawValue
-            urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: request.parameters, options: .prettyPrinted)
+            urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: request.parameters, options: [])
         case .get:()
         case .patch:()
         case .put:()
+        case .delete:()
         }
     }
     

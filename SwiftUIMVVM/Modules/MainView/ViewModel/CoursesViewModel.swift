@@ -35,6 +35,7 @@ class PopularMovieViewMmodel: ObservableObject, MainViewMmodelProtocol {
         self.ratingType = ratingType
         self.mainViewService = mainViewService
         self.loadingState = loading
+        
         getMovies(ratingType: ratingType)
     }
     
@@ -53,8 +54,8 @@ class PopularMovieViewMmodel: ObservableObject, MainViewMmodelProtocol {
                     self?.messageError = error.localizedDescription
                 case .finished:()
                 }
-            }){ response in
-                self.movies = response.results
+            }){ [weak self] response in
+                self?.movies = response.results
             }
         
         cancellables += [
@@ -84,8 +85,8 @@ class PopularMovieViewMmodel: ObservableObject, MainViewMmodelProtocol {
                         self?.messageError = error.localizedDescription
                     case .finished:()
                     }
-                }){ response in
-                    self.movies.append(contentsOf: response.results)
+                }){ [weak self] response in
+                    self?.movies.append(contentsOf: response.results)
                     
                 }
             

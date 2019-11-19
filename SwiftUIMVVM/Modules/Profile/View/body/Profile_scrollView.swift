@@ -11,6 +11,8 @@ import SwiftUI
 
 struct ProfileScrollView: View {
     
+    @ObservedObject var viewModel: ProfileViewModel
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
@@ -29,7 +31,7 @@ struct ProfileScrollView: View {
                         Text("My List")
                         Spacer()
                         Button(action: {
-                            //
+                            self.viewModel.createRequestToken()
                         }) {
                             Image(systemName: SF.plus.name)
                         }

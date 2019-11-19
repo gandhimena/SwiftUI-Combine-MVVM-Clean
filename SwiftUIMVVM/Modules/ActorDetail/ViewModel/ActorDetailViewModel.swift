@@ -37,8 +37,8 @@ class ActorDetailViewModel: ObservableObject {
                 case .finished:
                     print("get castDetail Finished")
                 }
-            }) { castDetail in
-                self.castData = castDetail.person
+            }) { [weak self] castDetail in
+                self?.castData = castDetail.person
         }
         
         cancellables += [

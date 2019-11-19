@@ -11,12 +11,13 @@ import SwiftUI
 struct NavBarItemIcon: View {
     var action: () -> Void
     var image: SF
+    @State var color: Color = .black
     
     var body: some View {
         Button(action: action) {
             Image(systemName:image.name)
                 .renderingMode(Image.TemplateRenderingMode.template)
-                .foregroundColor(Color.primary)
+                .foregroundColor(color)
         }
     }
 }

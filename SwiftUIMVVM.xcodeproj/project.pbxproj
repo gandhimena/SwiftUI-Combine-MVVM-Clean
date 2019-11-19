@@ -60,6 +60,14 @@
 		98692BE723739E2C004306ED /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BE623739E2C004306ED /* ProfileProtocols.swift */; };
 		98692BE92373A124004306ED /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BE82373A124004306ED /* Persistance.swift */; };
 		98692BEC2373A293004306ED /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 98692BEB2373A293004306ED /* KeychainSwift */; };
+		98692BEF23748039004306ED /* ListEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BEE23748039004306ED /* ListEndpoints.swift */; };
+		98692BF4237484A6004306ED /* MediaCreateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BF3237484A6004306ED /* MediaCreateList.swift */; };
+		98692BF62374A032004306ED /* MediaUpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BF52374A032004306ED /* MediaUpdateList.swift */; };
+		98692BFA2374C462004306ED /* CreateListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BF92374C462004306ED /* CreateListResponse.swift */; };
+		98692BFC2374CC10004306ED /* MyLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BFB2374CC10004306ED /* MyLists.swift */; };
+		98692BFE2374CC64004306ED /* MyMediaList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BFD2374CC64004306ED /* MyMediaList.swift */; };
+		98692C002375CD93004306ED /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692BFF2375CD93004306ED /* AccessToken.swift */; };
+		98692C052384A850004306ED /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98692C042384A850004306ED /* StartView.swift */; };
 		988CF6F6236A001D00DCBAA2 /* ScrollViewActorMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CF6F5236A001D00DCBAA2 /* ScrollViewActorMovies.swift */; };
 		988CF6F8236A0BB100DCBAA2 /* ActorMovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CF6F7236A0BB100DCBAA2 /* ActorMovieItem.swift */; };
 		988CF6FA236A0E0E00DCBAA2 /* ActorMovieItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988CF6F9236A0E0E00DCBAA2 /* ActorMovieItemImage.swift */; };
@@ -155,6 +163,14 @@
 		98692BE423739835004306ED /* ProfileRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteDataManager.swift; sourceTree = "<group>"; };
 		98692BE623739E2C004306ED /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		98692BE82373A124004306ED /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		98692BEE23748039004306ED /* ListEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEndpoints.swift; sourceTree = "<group>"; };
+		98692BF3237484A6004306ED /* MediaCreateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCreateList.swift; sourceTree = "<group>"; };
+		98692BF52374A032004306ED /* MediaUpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaUpdateList.swift; sourceTree = "<group>"; };
+		98692BF92374C462004306ED /* CreateListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListResponse.swift; sourceTree = "<group>"; };
+		98692BFB2374CC10004306ED /* MyLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLists.swift; sourceTree = "<group>"; };
+		98692BFD2374CC64004306ED /* MyMediaList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMediaList.swift; sourceTree = "<group>"; };
+		98692BFF2375CD93004306ED /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		98692C042384A850004306ED /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		988CF6F5236A001D00DCBAA2 /* ScrollViewActorMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewActorMovies.swift; sourceTree = "<group>"; };
 		988CF6F7236A0BB100DCBAA2 /* ActorMovieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorMovieItem.swift; sourceTree = "<group>"; };
 		988CF6F9236A0E0E00DCBAA2 /* ActorMovieItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorMovieItemImage.swift; sourceTree = "<group>"; };
@@ -260,7 +276,7 @@
 				98357454235E87FD009BD51E /* MainView */,
 				98E4F4AD23600DFA00EF56CD /* TabBar */,
 				98D48DB3236BC73F0064FF4F /* Login */,
-				98D48DB2236BC7330064FF4F /* Start */,
+				98692C032384A837004306ED /* Start */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -315,6 +331,7 @@
 			children = (
 				9835744E235E3E0C009BD51E /* MainViewEndpoint.swift */,
 				98692BAE236E45FA004306ED /* LoginViewRequest.swift */,
+				98692BEE23748039004306ED /* ListEndpoints.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -379,8 +396,8 @@
 			isa = PBXGroup;
 			children = (
 				98692BBA237223F0004306ED /* LoginImageBackground.swift */,
-				98692BC62372326D004306ED /* LoginTextFieldsAndSignUpSection.swift */,
 				98692BBC23722473004306ED /* LoginTextFieldSection.swift */,
+				98692BC62372326D004306ED /* LoginTextFieldsAndSignUpSection.swift */,
 				98692BC223722A84004306ED /* LoginSingUpSection.swift */,
 				98692BC423723001004306ED /* EnterToAppView.swift */,
 			);
@@ -398,6 +415,7 @@
 		98692BD323736E07004306ED /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				98692BF023748479004306ED /* Entities */,
 				98692BE32373980B004306ED /* Protocols */,
 				98692BE123739791004306ED /* DataManager */,
 				98692BDE237396B9004306ED /* ViewModel */,
@@ -454,6 +472,34 @@
 				98692BE623739E2C004306ED /* ProfileProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		98692BED2373B2B6004306ED /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		98692BF023748479004306ED /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				98692BF3237484A6004306ED /* MediaCreateList.swift */,
+				98692BF52374A032004306ED /* MediaUpdateList.swift */,
+				98692BF92374C462004306ED /* CreateListResponse.swift */,
+				98692BFB2374CC10004306ED /* MyLists.swift */,
+				98692BFD2374CC64004306ED /* MyMediaList.swift */,
+				98692BFF2375CD93004306ED /* AccessToken.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		98692C032384A837004306ED /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				98692C042384A850004306ED /* StartView.swift */,
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 		988CF6FB236A145700DCBAA2 /* Entities */ = {
@@ -598,16 +644,10 @@
 			path = ActorDetail;
 			sourceTree = "<group>";
 		};
-		98D48DB2236BC7330064FF4F /* Start */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
 		98D48DB3236BC73F0064FF4F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				98692BED2373B2B6004306ED /* Protocols */,
 				98692BB0236E4D01004306ED /* Entities */,
 				98D48DBC236BCF0C0064FF4F /* DataManager */,
 				98D48DBB236BCE690064FF4F /* ViewModel */,
@@ -751,11 +791,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				98692BCE237281D3004306ED /* NavigationConfiguration.swift in Sources */,
+				98692C052384A850004306ED /* StartView.swift in Sources */,
 				988FD7AA236971F400F2D826 /* ActorAverageView.swift in Sources */,
 				98FB28B42367F023001723D6 /* TextTemplate.swift in Sources */,
 				98357456235E882F009BD51E /* ServiceError.swift in Sources */,
 				988D5E80235F682E000F9BF0 /* Constants.swift in Sources */,
 				98692BE92373A124004306ED /* Persistance.swift in Sources */,
+				98692BEF23748039004306ED /* ListEndpoints.swift in Sources */,
 				982A16DC2368C86C00F1830E /* MovieCast.swift in Sources */,
 				98692BE0237396CA004306ED /* ProfileViewModel.swift in Sources */,
 				981A7597235C18B000DDB4C6 /* AppDelegate.swift in Sources */,
@@ -780,6 +822,7 @@
 				98357451235E3F7B009BD51E /* MainViewManager.swift in Sources */,
 				98FB28B62368BDF6001723D6 /* ScrollViewCast.swift in Sources */,
 				98692BB62370E9B8004306ED /* Credential.swift in Sources */,
+				98692BF62374A032004306ED /* MediaUpdateList.swift in Sources */,
 				982A16E82368FAD700F1830E /* MediaCast.swift in Sources */,
 				98D48DB5236BC7BA0064FF4F /* LoginView.swift in Sources */,
 				98692BBB237223F0004306ED /* LoginImageBackground.swift in Sources */,
@@ -789,6 +832,7 @@
 				98B669FC2369431300AF5237 /* CastData.swift in Sources */,
 				98692BDB23739002004306ED /* Profile_LateralMenu.swift in Sources */,
 				9822151523643EC900DE6672 /* MovieImage.swift in Sources */,
+				98692BFC2374CC10004306ED /* MyLists.swift in Sources */,
 				98E4F4DF23629A5E00EF56CD /* Movie.swift in Sources */,
 				982215232367553B00DE6672 /* voteAverageView.swift in Sources */,
 				98E4F4B823618BD000EF56CD /* Cache.swift in Sources */,
@@ -811,6 +855,7 @@
 				98692BDD237391DE004306ED /* Profile_scrollView.swift in Sources */,
 				98692BBD23722473004306ED /* LoginTextFieldSection.swift in Sources */,
 				98692BD623736E1E004306ED /* ProfileView.swift in Sources */,
+				98692BF4237484A6004306ED /* MediaCreateList.swift in Sources */,
 				98692BC72372326D004306ED /* LoginTextFieldsAndSignUpSection.swift in Sources */,
 				98B669F3236918E700AF5237 /* MainViewImageItem.swift in Sources */,
 				988D5E7D235ED82E000F9BF0 /* ActivityIndicator.swift in Sources */,
@@ -820,6 +865,8 @@
 				98B669FA236942AA00AF5237 /* CastDetail.swift in Sources */,
 				988D5E8A235FE448000F9BF0 /* Button+Extension.swift in Sources */,
 				982A16E02368CB0D00F1830E /* MovieDetailMainContent.swift in Sources */,
+				98692BFA2374C462004306ED /* CreateListResponse.swift in Sources */,
+				98692C002375CD93004306ED /* AccessToken.swift in Sources */,
 				98D48DB9236BCE5A0064FF4F /* LoginViewModel.swift in Sources */,
 				98692BC1237225E4004306ED /* RectangleTemplate.swift in Sources */,
 				98221521236752A600DE6672 /* String+Extension.swift in Sources */,
@@ -829,6 +876,7 @@
 				988CF6FD236A148800DCBAA2 /* MediaActorData.swift in Sources */,
 				988CF6F8236A0BB100DCBAA2 /* ActorMovieItem.swift in Sources */,
 				988FD7A2236968D400F2D826 /* ActorImageView.swift in Sources */,
+				98692BFE2374CC64004306ED /* MyMediaList.swift in Sources */,
 				98B669FE2369449700AF5237 /* CastMovies.swift in Sources */,
 				98692BB2236E4D18004306ED /* RequestToken.swift in Sources */,
 				98692BB82371E6F6004306ED /* UIApplication+Extension.swift in Sources */,

@@ -15,6 +15,8 @@ struct TabbarView: View {
         case topRate, popular, upcoming, profile
     }
     
+    @ObservedObject var startViewModel: StartViewModel
+    
     var body: some View {
         
         TabView {
@@ -22,8 +24,7 @@ struct TabbarView: View {
             MainView(mediaType: .top_rated).tabItem { tabbedItem("Top Rate", .star) }.tag(Tabs.topRate)
             MainView(mediaType: .popular).tabItem { tabbedItem("Popular", .flame) }.tag(Tabs.popular)
             MainView(mediaType: .upcoming).tabItem { tabbedItem("Upcoming", .calendar) }.tag(Tabs.upcoming)
-            ProfileView().tabItem { tabbedItem("Profile", .person_circle) }.tag(Tabs.profile)
-            
+            ProfileView(viewModel: .init(), starViewModel: startViewModel).tabItem { tabbedItem("Profile", .person_circle) }.tag(Tabs.profile)
         }
         .navigationBarBackButtonHidden(true)
     }

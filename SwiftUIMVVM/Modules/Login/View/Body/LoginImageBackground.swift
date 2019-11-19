@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 
 struct LoginImageBackground: View {
-    
     var body: some View {
         GeometryReader { geo in
             Image("login_background")
