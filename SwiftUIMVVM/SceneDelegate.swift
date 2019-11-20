@@ -27,22 +27,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, SceneDelegateProtocol {
 
         // Create the SwiftUI view that provides the window contents.
         
-        let hostLoginController = UIHostingController(rootView: StartView(viewModel: .init()))
-//        let hostTabBarController = UIHostingController(rootView: TabbarView())
+        guard let isSessionID = persistance?.isKeyChainExist(.keychain_sessionID) else {
+            let hostLoginController = UIHostingController(rootView: StartView(viewModel: StartViewModel(isSessionIDExist: false)))
+            if let windowScene = scene as? UIWindowScene {
+                let window = UIWindow(windowScene: windowScene)
+                window.rootViewController = hostLoginController
+                self.window = window
+                window.makeKeyAndVisible()
+            }
+            return
+        }
         
-//        guard let isSessionID = persistance?.isKeyChainExist(.keychain_sessionID) else {
-//            let hostLoginController = UIHostingController(rootView: LoginView(loginViewModel: .init()))
-//            if let windowScene = scene as? UIWindowScene {
-//                let window = UIWindow(windowScene: windowScene)
-//                window.rootViewController = hostLoginController
-//                self.window = window
-//                window.makeKeyAndVisible()
-//            }
-//            return
-//        }
-        
-//        let rootController = isSessionID ? hostTabBarController : hostLoginController
-        // Use a UIHostingController as window root view controller.
+        let hostLoginController = UIHostingController(rootView: StartView(viewModel: StartViewModel(isSessionIDExist: isSessionID)))
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = hostLoginController

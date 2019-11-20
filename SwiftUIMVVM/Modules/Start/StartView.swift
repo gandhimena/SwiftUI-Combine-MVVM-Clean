@@ -12,6 +12,13 @@ import SwiftUI
 class StartViewModel: ObservableObject {
     
     @Published var isTabBarActive: Bool = false
+    
+    var isSessionIDExist: Bool
+    
+    init(isSessionIDExist: Bool) {
+        self.isSessionIDExist = isSessionIDExist
+        self.isTabBarActive = isSessionIDExist
+    }
 }
 
 struct StartView: View {

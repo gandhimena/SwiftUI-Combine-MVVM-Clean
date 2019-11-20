@@ -50,17 +50,9 @@ struct ProfileLateralMenu: View {
                     
                     Spacer()
                     HStack {
-//                        NavigationLink(destination: LoginView(loginViewModel: .init()), isActive: $viewModel.isLogoutSuccess ) {
-//                            Button(action: {
-//                                self.viewModel.logout()
-//                            }) {
-//                                Text("Logout")
-//                                .modifier(ButtonTemplate())
-//                                .frame(width: 180)
-//                            }
-//                        }
                         Button(action: {
                             self.startViewModel.isTabBarActive = false
+                            self.viewModel.logout()
                         }) {
                             Text("Logout")
                             .modifier(ButtonTemplate())
